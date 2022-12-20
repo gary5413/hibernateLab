@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <!--
+    1個資料庫對映1個 hibernate.cfg.xml 1個hibernate.cfg.xml對映1個SessionFactory物件
+    sessionfactory重量級物件
+    thread-safe ：做完才換下一個 所以要等 消耗資源
+    thread 執行緒 會插隊
+
+    -->
+    <session-factory>
+        <!-- 資料庫基本設定   -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibernateDB</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- 資料庫其他設定-->
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">5413gary</property>
+
+        <!-- DB schema will be updated if needed -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!--  使用getcurrentsession 就要在cfg 設定此參數      -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- 宣告程式使用的Mapping檔 ，每個永續類別都需要定義一個Mapping檔       -->
+        <mapping class="model.HouseBean"></mapping>
+        <mapping class="model.Book"></mapping>
+        <mapping class="model.BookDetail"></mapping>
+        <mapping class="model.Teacher"></mapping>
+        <mapping class="model.Student"></mapping>
+        <mapping class="model.Test"></mapping>
+<!--        <mapping class="model.Friend"></mapping>-->
+<!--        <mapping class="model.Groups"></mapping>-->
+        <!--         <mapping resouce="model/HouseBean"></mapping>-->
+
+    </session-factory>
+</hibernate-configuration>

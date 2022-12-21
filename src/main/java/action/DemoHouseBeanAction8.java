@@ -1,13 +1,10 @@
 package action;
 
 import model.HouseBean;
-import model.dao.HouseDao;
-import model.service.HouseService;
+import service.HouseService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import util.HibernateUtils;
-
-import java.util.List;
 
 public class DemoHouseBeanAction8 {
     public static void main(String[] args) {

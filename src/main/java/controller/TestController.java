@@ -1,7 +1,7 @@
 package controller;
 
 import model.Test;
-import model.dao.TestDaoImpl;
+import dao.TestDaoImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -1,4 +1,4 @@
-package model.dao;
+package dao;
 
 import model.Test;
 import org.hibernate.Session;

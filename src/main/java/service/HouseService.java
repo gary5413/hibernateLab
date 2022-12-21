@@ -1,7 +1,7 @@
-package model.service;
+package service;
 
 import model.HouseBean;
-import model.dao.HouseDao;
+import dao.HouseDao;
 import org.hibernate.Session;
 
 import java.util.List;

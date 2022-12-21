@@ -1,13 +1,11 @@
 package action;
 
 import model.HouseBean;
-import model.dao.HouseDao;
+import dao.HouseDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import util.HibernateUtils;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class DemoHouseBeanAction7 {
